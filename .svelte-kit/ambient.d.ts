@@ -26,28 +26,23 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const npm_package_dev: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
 	export const npm_node_execpath: string;
-	export const npm_package_resolved: string;
 	export const WT_PROFILE_ID: string;
 	export const SHLVL: string;
 	export const npm_config_noproxy: string;
 	export const HOME: string;
 	export const OLDPWD: string;
 	export const LESS: string;
-	export const npm_package_optional: string;
 	export const NVM_BIN: string;
 	export const npm_package_json: string;
 	export const ZSH: string;
 	export const LSCOLORS: string;
 	export const NVM_INC: string;
-	export const npm_package_engines_node: string;
 	export const PAGER: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_local_prefix: string;
-	export const npm_package_integrity: string;
 	export const P9K_TTY: string;
 	export const WSL_DISTRO_NAME: string;
 	export const COLOR: string;
@@ -76,11 +71,9 @@ declare module '$env/static/private' {
 	export const SHELL: string;
 	export const npm_package_version: string;
 	export const npm_lifecycle_event: string;
-	export const npm_package_dev_optional: string;
 	export const P9K_SSH: string;
 	export const npm_config_globalconfig: string;
 	export const npm_config_init_module: string;
-	export const npm_package_peer: string;
 	export const PWD: string;
 	export const JAVA_HOME: string;
 	export const npm_execpath: string;
@@ -93,6 +86,8 @@ declare module '$env/static/private' {
 	export const WSLENV: string;
 	export const INIT_CWD: string;
 	export const EDITOR: string;
+	export const NODE_ENV: string;
+	export const VIPSHOME: string;
 }
 
 /**
@@ -124,28 +119,23 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		npm_package_dev: string;
 		USER: string;
 		npm_config_user_agent: string;
 		npm_node_execpath: string;
-		npm_package_resolved: string;
 		WT_PROFILE_ID: string;
 		SHLVL: string;
 		npm_config_noproxy: string;
 		HOME: string;
 		OLDPWD: string;
 		LESS: string;
-		npm_package_optional: string;
 		NVM_BIN: string;
 		npm_package_json: string;
 		ZSH: string;
 		LSCOLORS: string;
 		NVM_INC: string;
-		npm_package_engines_node: string;
 		PAGER: string;
 		npm_config_userconfig: string;
 		npm_config_local_prefix: string;
-		npm_package_integrity: string;
 		P9K_TTY: string;
 		WSL_DISTRO_NAME: string;
 		COLOR: string;
@@ -174,11 +164,9 @@ declare module '$env/dynamic/private' {
 		SHELL: string;
 		npm_package_version: string;
 		npm_lifecycle_event: string;
-		npm_package_dev_optional: string;
 		P9K_SSH: string;
 		npm_config_globalconfig: string;
 		npm_config_init_module: string;
-		npm_package_peer: string;
 		PWD: string;
 		JAVA_HOME: string;
 		npm_execpath: string;
@@ -191,6 +179,8 @@ declare module '$env/dynamic/private' {
 		WSLENV: string;
 		INIT_CWD: string;
 		EDITOR: string;
+		NODE_ENV: string;
+		VIPSHOME: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

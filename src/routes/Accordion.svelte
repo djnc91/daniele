@@ -1,34 +1,33 @@
 <script>
-  import IcRoundKeyboardDoubleArrowDown from '~icons/ic/round-keyboard-double-arrow-down';
+  import IcTwotoneKeyboardDoubleArrowDown from '~icons/ic/twotone-keyboard-double-arrow-down';
 
   export let open = false;
 	import { slide } from 'svelte/transition';
+  
 	const handleClick = () => open = !open
 </script>
 
 <div class="accordion">
-	<div class="header" on:click={handleClick}>
-		<div class="text">
-			<slot name="head"></slot>	
+  <div class="header" on:click={handleClick}>
+    <div class="text">
+      <slot name="head"></slot>	
 		</div>
 		
 		<button >
-			<IcRoundKeyboardDoubleArrowDown />
+      <IcTwotoneKeyboardDoubleArrowDown />
 		</button>
 	</div>
 	
 	{#if open}
 	<div class="details" transition:slide>
-		<slot name="details">
-		</slot>
+    <slot name="details">
+    </slot>
 	</div>
 	{/if}
 </div>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
   
   div.accordion {
 		/* margin: 1rem 0; */
@@ -38,48 +37,64 @@
 	}
 	
 	div.header {
-		display:flex;
+    display:flex;
 		width:100%;
     align-items: center;
     padding-bottom: 20px;
     padding-left: 10px;
     border-radius: 4px;
     cursor: pointer;
-    border-bottom: 1px solid var(--clr-terminal-bg);
+    color: var(--clr-secondary-text);
 	}
   
   div.header:hover button {
-    filter: drop-shadow(0px 0px 5px var(--clr-secondary));
     border: 1px solid var(--clr-secondary);
     background-color: var(--clr-secondary-alpha-2);
   }
   
 	div.header .text {
+    color: var(--clr-secondary-text);
     flex: 1;
 		margin-right: 5px;
-    font-family: 'Ubuntu';
+    font-family: 'Poppins';
+    font-weight: bold;
     transition: filter 0.3s ease-in-out;
 	}
 	
 	div.details {
     /* width:90%; */
-    background-color: var(--clr-terminal-bg);
+    color: var(--clr-secondary-text);
+    background-color: var(--clr-secondary-alpha-3);
 		padding:1rem;
     border-radius: 4px;
+    font-family: 'Lora';
+    border: 1px solid var(--clr-secondary-alpha-2);
+    
 	}
   
   button {
-    background-color: var(--clr-terminal-bg);
-    border: 1px solid var(--clr-terminal-bg);
+    background-color: var(--clr-secondary-alpha-2);
+    color: var(--clr-secondary);
+    border: 2px solid transparent;
+    font-size: 1.2rem;
+    height: 40px;
+    width: 40px;
     padding: 5px;
-    border-radius: 4px;
-    transition: filter 0.3s ease-in-out, background-color 0.3s ease-in-out, border 0.3s ease-in-out;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
   }
 
   button:hover {
-    filter: drop-shadow(0px 0px 5px var(--clr-secondary));
-    border: 1px solid var(--clr-secondary);
+    border: 2px solid var(--clr-secondary);
     background-color: var(--clr-secondary-alpha-2);
+  }
+
+  @media all and (max-width: 1440px) {
+    div.header,
+    div.header .text,
+    div.details {
+      font-size: 0.8rem;
+    }
   }
 
   @media all and (max-width: 768px) {

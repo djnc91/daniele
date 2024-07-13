@@ -200,7 +200,6 @@ function create_ssr_component(fn) {
   };
 }
 function add_attribute(name, value, boolean) {
-  if (value == null || boolean) return "";
   const assignment = `="${escape(value, true)}"`;
   return ` ${name}${assignment}`;
 }
